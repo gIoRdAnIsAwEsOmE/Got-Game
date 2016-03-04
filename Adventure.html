@@ -1,0 +1,116 @@
+<html>
+
+
+
+	<style>
+
+		p {
+			color: red;
+		}
+
+	</style>
+	<head>
+			<title>Adventure</title>
+	</head>
+	<body>
+		<p>Hello World</p>
+		<p>I am <u><b>awesome</u></b>.</p>
+
+		<p>What is your name?	</p>
+		<script text="text/javascript">
+		//None of that applies <anymore>
+
+
+		function a(){
+			alert("You have chosen " + choice);
+			if(choice == "green"){
+				alert("You have signed the signature to live in the ocean!  What a wonderful oppurtunity!");
+			}else if(choice == "Green"){
+				alert("I want to have 1000 words per minute to finish essays in a second");
+			}
+		}
+
+		//a();
+		function wakeup(){
+			var choice = "";
+			var x = 0;
+			while(x < 5){
+				if(x == 0){
+					choice = prompt("Stay in bed? Answer Yes or No.");
+					if(choice == "Yes"){
+						x++;
+					}else{
+						alert("Incorrect");
+
+					}
+				}else if(x == 1){
+					choice = prompt("Get up to eat Breakfast? Answer Yes or No.");
+					if(choice == "Yes"){
+						alert("You ate breakfast");
+						x++;
+					}else if(choice == "No"){
+						alert("You slept and never waked up");
+						x--;
+						}
+				}else if(x == 2){
+					choice = prompt("Go to school? Answer Yes or No.");
+					if(choice == "Yes"){
+						x++;
+					}else if(choice == "No"){
+						alert("Homelessness is a pretty good career");
+						x = 0;
+					}
+
+				}else if(x == 3){
+					choice = prompt("Take the bus? Answer Yes or No.");
+					if(choice == "Yes"){
+						alert("Your legs were saved");
+						x++;
+					}else if(choice == "No"){
+						alert("You found a wheelchair and decided to use it... Except it broke.");
+						x = 0;
+					}
+				}else if(x == 4){
+					choice = prompt("Say hi to me, the best person? Answer Yes, Yes, or Yes.");
+					if(choice == "Yes"){
+						alert("Wrong!");
+						x = 0;
+					}else if(choice == "-yes"){
+						alert("You are extremely smart; did you know your iq was 300?");
+
+					}else{
+						alert("How did you get this question wrong?");
+						x = 0;
+					}
+
+				}
+				alert(choice)
+			}
+
+		}	
+
+		wakeup();	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	</script>
+
+	</body>
+</html>
