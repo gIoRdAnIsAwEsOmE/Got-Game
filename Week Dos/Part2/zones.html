@@ -1,0 +1,71 @@
+<html>
+    <style>
+        #background {
+            height: 370px;
+            width: 370px;
+            background-image: url(http://cdn.wikimg.net/strategywiki/images/b/b6/Pokemon_FRLG_PalletTown.png);
+            background-size: 370px 370px;
+            background-repeat: no-repeat;
+            border: 2px solid black;
+        }
+        #zone {
+            display: block;
+            position: absolute;
+            border: 1px solid white;
+          }
+        .zone1 {
+            left: 50px;
+            top: 80px;
+            width: 110px;
+            height: 70px;
+        }
+        
+        .zone2 {
+            left: 200px;
+            top: 80px;
+            width: 110px;
+            height: 70px;
+        }
+        
+        .zone3 {
+            left: 200px;
+            top: 170px;
+            width: 110px;
+            height: 90px;
+        }
+        
+        .zone4 {
+            left: 170px;
+            width: 60px;
+            height: 50px;
+        }
+        
+        .invis {
+            visibility: hidden;
+        }
+        
+        .last {
+            border: 3px solid black;
+        }
+        
+        
+    </style>
+    <body>
+        <div id="background"><div>
+        <div id="zone" class="zone1" onclick=chooseZone(1)></div>
+        <div id="zone" class="zone2" onclick=chooseZone(2)></div>
+        <div id="zone" class="zone3" onclick=chooseZone(3)></div>
+        <div id="zone" class="zone4" onclick=chooseZone(4)></div>
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <p id="text"> Start where to go?  Choose one of the white! </p>
+        
+    </body>
+    <script>
+        
+        function chooseZone(int) {
+            
+        }
+        
+    </script>
+    <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
+</html>
