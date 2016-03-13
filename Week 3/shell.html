@@ -1,0 +1,31 @@
+<html>
+    <body>
+        <script>
+            function makeShells() {
+                
+                var actual = prompt("HOST: Shell A or B or C");
+                var x = 0;
+                while (x < 10) {
+                    var y = Math.floor(Math.random() * 3) + 1;
+                    if (y == 2) {
+                        actual = "A";
+                    }else if (y == 1) {
+                        actual = "B";
+                    }else if (y == 3) {
+                        actual = "C";
+                    }
+                    x++;
+                }
+                var guess = prompt("Player: Shell A or B or C");
+                    if (guess == actual) {
+                        alert("correct");
+                    }else {
+                        alert("INcorrect");
+                        makeShells();
+                    }
+            }
+            makeShells();
+        </script>
+        
+    </body>
+<html>

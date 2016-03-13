@@ -1,0 +1,57 @@
+<html>
+    <body>
+        <script>
+            
+            var score = 0;
+            function checkWinner(choice, choicetwo) {
+                //Check for tie
+                if (choice != "scissors" && choice != "rock" && choice != "paper") {
+                    alert("You didn't choose one of the three or you spelled your choice wrong");
+                }else if (choice == null || choice == "") {
+                    alert("You didn't choose anything?");
+                }else if (choice == choicetwo) {
+                    alert("No winner!");
+                    //All Rocks
+                }else if ( (choice == "rock") && (choicetwo == "paper") ) {
+                    alert("You chose " + choice + " computer chose " + choicetwo + " You lost!");
+                }else if (choice == "rock" && choicetwo == "scissors") {
+                    alert("You chose " + choice + " computer chose " + choicetwo + " You won!");
+                    score++;
+                }   //All Scissors
+                else if (choice == "scissors" && choicetwo == "paper") {
+                    alert("You chose " + choice + " computer chose " + choicetwo + " You won!");
+                    score++;
+                }else if (choice == "scissors" && choicetwo == "rock") {
+                    alert("You chose " + choice + " computer chose " + choicetwo + " You lost!");
+                }   //All papers
+                else if (choice == "paper" && choicetwo == "rock") {
+                    alert("You chose " + choice + " computer chose " + choicetwo + " You won!");
+                    score++;
+                }else if (choice == "paper" && choicetwo == "scissors") {
+                    alert("You chose " + choice + " computer chose " + choicetwo + " You lost!");
+                }
+            }
+            function startGame() {
+                
+                var actual = null;
+                var games = 0;
+                while (games < 10) {
+                    var y = Math.floor(Math.random() * 3) + 1;
+                    if (y == 2) {
+                        actual = "Scissors";
+                    }else if (y == 1) {
+                        actual = "Rock";
+                    }else if (y == 3) {
+                        actual = "Paper";
+                    }
+                    games++;
+                    alert("Your score is " + score + " out of " + games + "  out of 10");
+                    var guess = prompt("Player:  Scissors or Rock or Paper");
+                    checkWinner(guess.toLowerCase(), actual.toLowerCase());
+                }
+            }
+            startGame();
+        </script>
+        
+    </body>
+<html>

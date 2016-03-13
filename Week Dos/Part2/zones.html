@@ -40,10 +40,6 @@
             height: 50px;
         }
         
-        .invis {
-            visibility: hidden;
-        }
-        
         .last {
             border: 3px solid black;
         }
@@ -52,20 +48,53 @@
     </style>
     <body>
         <div id="background"><div>
-        <div id="zone" class="zone1" onclick=chooseZone(1)></div>
-        <div id="zone" class="zone2" onclick=chooseZone(2)></div>
-        <div id="zone" class="zone3" onclick=chooseZone(3)></div>
-        <div id="zone" class="zone4" onclick=chooseZone(4)></div>
+        <div id="zone" class="zone1" onClick='chooseZone(1)'></div>
+        <div id="zone" class="zone2" onClick='chooseZone(2)'></div>
+        <div id="zone" class="zone3" onClick='chooseZone(3)'></div>
+        <div id="zone" class="zone4" onClick='chooseZone(4)'></div>
         <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
         <p id="text"> Start where to go?  Choose one of the white! </p>
         
     </body>
     <script>
-        
-        function chooseZone(int) {
-            
+        //1 - Access 1st house ---- Giordan's secret plans to take over your computer.  YES YOU!  The one reading this message.
+        //2 - Access Neighbor house
+        //3 - Access Path
+        //4 - Access Lab
+        //5 - Access 1st house
+        //6 - Access home
+        var bools = Array(6);
+        for(x = 0; x < bools.length; x++){
+            bools[x] = false;
         }
         
+        
+        function chooseZone(int) {  
+            alert(int);
+            zone.addClass("last");
+            var first = null;
+            var zone = null;
+            var message = $("#text");
+            for(x = 0; x < bools.length; x++){
+                if (bools[x] = false) {
+                    var newbools = bools[x];
+                    zone = $('.zone' + x);
+                    if (x == 1) {
+                        message = "The 1st step is correct.  MoreGenericMessage here.";
+                    }else if (x == 2) {
+                    }else if (x == 3) {
+                    }else if (x == 4) {
+                    }else if (x == 5) {
+                    }else if (x == 6) {
+                        
+                    }
+                    newbools = true;
+                }
+            }
+            first.addClass("last");
+        }
+       
+    
     </script>
     <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
 </html>
