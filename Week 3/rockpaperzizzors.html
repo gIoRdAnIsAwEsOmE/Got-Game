@@ -72,7 +72,7 @@
                     alert("Your score is " + score + " out of " + games + "  out of 10");
                     var guess = prompt("Player:  Scissors or Rock or Paper");
                     
-                    checkWinner(rules[guess].name.toLowerCase(), rules[actual].name.toLowerCase());
+                    checkWinner(rules[guess.toLowerCase()], rules[actual.toLowerCase()].name);
                 }
             }
             startGame();
