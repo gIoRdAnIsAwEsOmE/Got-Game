@@ -1,9 +1,38 @@
 <html>
     <body>
         <script>
-            
+            //Mr. Ricky is a GENIUS!
+        
+            var rules = {
+                     "scissors": {
+                    "name": "scissors",
+                    "weakness": "rock"
+                },
+                 "rock": {
+                    "name": "rock",
+                    "weakness": "paper"
+                },
+                "paper": {
+                    "name": "paper",
+                    "weakness": "scissors"
+                }
+            }
             var score = 0;
-            function checkWinner(choice, choicetwo) {
+            //choicetwo is computer choice
+            //choice is your choice
+            function checkWinner(chose, chosetwo) {
+                var choice = rules[chose];
+                var choicetwo = rules[chosetwo];
+                if (choice.name == choicetwo.name) {
+                    alert("Tie! You and the computer chose " + choice.name);
+                }else if (choice.weakness == choicetwo.name) {
+                    alert("You lost! You chose " + choice.name + ".  The computer chose " + choicetwo.name);
+                }else if (choicetwo.weakness == choice.name) {
+                    alert("You won! You chose " + choice.name + ".  The computer chose " + choicetwo.name);
+                    score++;
+                }
+            }
+            /*function checkWinner(choice, choicetwo) {
                 //Check for tie
                 if (choice != "scissors" && choice != "rock" && choice != "paper") {
                     alert("You didn't choose one of the three or you spelled your choice wrong");
@@ -30,19 +59,20 @@
                 }else if (choice == "paper" && choicetwo == "scissors") {
                     alert("You chose " + choice + " computer chose " + choicetwo + " You lost!");
                 }
-            }
+            }*/
             function startGame() {
                 
                 var actual = null;
                 var games = 0;
                 while (games < 10) {
-                    var y = Math.floor(Math.random() * 3) + 1;
+                    var y = Math.floor(Math.random() * 3);
                     var choices = ["scissors", "rock","paper"];
-                    actual = choice[y];
+                    actual = choices[y];
                     games++;
                     alert("Your score is " + score + " out of " + games + "  out of 10");
                     var guess = prompt("Player:  Scissors or Rock or Paper");
-                    checkWinner(guess.toLowerCase(), actual.toLowerCase());
+                    
+                    checkWinner(rules[guess].name.toLowerCase(), rules[actual].name.toLowerCase());
                 }
             }
             startGame();
