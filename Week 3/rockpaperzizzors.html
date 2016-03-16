@@ -21,6 +21,7 @@
             //choicetwo is computer choice
             //choice is your choice
             function checkWinner(chose, chosetwo) {
+                
                 var choice = rules[chose];
                 var choicetwo = rules[chosetwo];
                 if (choice.name == choicetwo.name) {
@@ -72,7 +73,7 @@
                     alert("Your score is " + score + " out of " + games + "  out of 10");
                     var guess = prompt("Player:  Scissors or Rock or Paper");
                     
-                    checkWinner(rules[guess.toLowerCase()], rules[actual.toLowerCase()].name);
+                    checkWinner(rules[guess.toLowerCase()].name, rules[actual.toLowerCase()].name);
                 }
             }
             startGame();
