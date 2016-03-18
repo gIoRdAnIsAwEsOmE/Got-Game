@@ -63,38 +63,36 @@
         //4 - Access Lab
         //5 - Access 1st house
         //6 - Access home
-        var bools = Array(6);
-        for(x = 0; x < bools.length; x++){
-            bools[x] = false;
-        }
+        var bools = Array(6).fill(false);
         
         
         function chooseZone(int) {  
             alert(int);
-            zone.addClass("last");
-            var first = null;
             var zone = null;
-            var message = $("#text");
-            for(x = 0; x < bools.length; x++){
-                if (bools[x] = false) {
-                    var newbools = bools[x];
+            var message = null
+            for(x = 1; x < bools.length; x++){                               //Will make case break statement
+                if (bools[x] == false) {
+                    var newbool = bools[x];
                     zone = $('.zone' + x);
+                    alert(zone);
                     if (x == 1) {
                         message = "The 1st step is correct.  MoreGenericMessage here.";
                     }else if (x == 2) {
+                        message = "The 2nd step is correct.  MoreGenericMessage here.";
                     }else if (x == 3) {
+                        message = "The 3rd step is correct.  MoreGenericMessage here.";
                     }else if (x == 4) {
-                    }else if (x == 5) {
-                    }else if (x == 6) {
-                        
+                        message = "The 4th step is correct.  MoreGenericMessage here.";
                     }
-                    newbools = true;
+                    newbool = true;
                 }
+                $('.zone' + int).innerHTML = message;
             }
-            first.addClass("last");
+            
         }
        
     
     </script>
-    <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+
 </html>

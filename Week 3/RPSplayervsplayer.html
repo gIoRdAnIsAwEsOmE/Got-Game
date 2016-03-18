@@ -4,33 +4,34 @@
         <button id=scissors>
         <script>
             
+            var rules = {
+                     "scissors": {
+                    "name": "scissors",
+                    "weakness": "rock"
+                },
+                 "rock": {
+                    "name": "rock",
+                    "weakness": "paper"
+                },
+                "paper": {
+                    "name": "paper",
+                    "weakness": "scissors"
+                }
+            }
             var score = 0;
-            function checkWinner(choice, choicetwo) {
-                //Check for tie
-                if (choice != "scissors" && choice != "rock" && choice != "paper") {
-                    alert("You didn't choose one of the three or you spelled your choice wrong");
-                }else if (choice == null || choice == "") {
-                    alert("You didn't choose anything?");
-                }else if (choice == choicetwo) {
-                    alert("No winner!");
-                    //All Rocks
-                }else if ( (choice == "rock") && (choicetwo == "paper") ) {
-                    alert("You chose " + choice + " computer chose " + choicetwo + " You lost!");
-                }else if (choice == "rock" && choicetwo == "scissors") {
-                    alert("You chose " + choice + " computer chose " + choicetwo + " You won!");
+            //choicetwo is player2 choice
+            //choice is player1 choice
+            function checkWinner(chose, chosetwo) {
+                
+                var choice = rules[chose];
+                var choicetwo = rules[chosetwo];
+                if (choice.name == choicetwo.name) {
+                    alert("Tie! You and the other chose " + choice.name);
+                }else if (choice.weakness == choicetwo.name) {
+                    alert("You lost! You chose " + choice.name + ".  The other chose " + choicetwo.name);
+                }else if (choicetwo.weakness == choice.name) {
+                    alert("You won! You chose " + choice.name + ".  The other chose " + choicetwo.name);
                     score++;
-                }   //All Scissors
-                else if (choice == "scissors" && choicetwo == "paper") {
-                    alert("You chose " + choice + " computer chose " + choicetwo + " You won!");
-                    score++;
-                }else if (choice == "scissors" && choicetwo == "rock") {
-                    alert("You chose " + choice + " computer chose " + choicetwo + " You lost!");
-                }   //All papers
-                else if (choice == "paper" && choicetwo == "rock") {
-                    alert("You chose " + choice + " computer chose " + choicetwo + " You won!");
-                    score++;
-                }else if (choice == "paper" && choicetwo == "scissors") {
-                    alert("You chose " + choice + " computer chose " + choicetwo + " You lost!");
                 }
             }
             /*function startGame() {
@@ -54,6 +55,12 @@
             }
             startGame();
             */
+                for (gamesPlayed = 0; gamesPlayed < 5; gamesPlayed++) {
+                    var oneprompt = prompt("Player1: Rock, Paper, or Scissors");
+                    var twoprompt = prompt("Player2: Rock, Paper, or Scissors");
+                    checkWinner(oneprompt, twoprompt);
+                    alert("You have " + score);
+                }
         </script>
         
     </body>
