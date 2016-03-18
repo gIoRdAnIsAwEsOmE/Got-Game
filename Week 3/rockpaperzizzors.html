@@ -65,12 +65,12 @@
                 
                 var actual = null;
                 var games = 0;
-                while (games < 10) {
+                while (games < 5) {
                     var y = Math.floor(Math.random() * 3);
                     var choices = ["scissors", "rock","paper"];
                     actual = choices[y];
                     games++;
-                    alert("Your score is " + score + " out of " + games + "  out of 10");
+                    alert("Your score is " + score + " out of " + games + "  out of ");
                     var guess = prompt("Player:  Scissors or Rock or Paper");
                     
                     checkWinner(rules[guess.toLowerCase()].name, rules[actual.toLowerCase()].name);

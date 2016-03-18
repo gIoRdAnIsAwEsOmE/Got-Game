@@ -53,9 +53,10 @@
         <div id="zone" class="zone3" onClick='chooseZone(3)'></div>
         <div id="zone" class="zone4" onClick='chooseZone(4)'></div>
         <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-        <p id="text"> Start where to go?  Choose one of the white! </p>
+        <p id="txt">awefmowae</p>
         
     </body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
     <script>
         //1 - Access 1st house ---- Giordan's secret plans to take over your computer.  YES YOU!  The one reading this message.
         //2 - Access Neighbor house
@@ -64,9 +65,11 @@
         //5 - Access 1st house
         //6 - Access home
         var bools = Array(6).fill(false);
-        
-        
-        function chooseZone(int) {  
+        if (document.getElementById("txt") == $("#txt")) {
+            alert("true");
+        }
+        $('#txt').innerHTML = "Start where to go?  Choose one of the white!";
+        function chooseZone(int) { 
             alert(int);
             var zone = null;
             var message = null
@@ -76,23 +79,37 @@
                     zone = $('.zone' + x);
                     alert(zone);
                     if (x == 1) {
-                        message = "The 1st step is correct.  MoreGenericMessage here.";
+                        if (int == 1) {
+                            message = "The 1st step is correct.  MoreGenericMessage here.";
+                            newbool = true;
+                        }else{
+                        }
                     }else if (x == 2) {
-                        message = "The 2nd step is correct.  MoreGenericMessage here.";
+                        if (int == 2) {
+                            message = "The 2nd step is correct.  MoreGenericMessage here.";
+                            newbool = true;
+                        }else{
+                        }
                     }else if (x == 3) {
-                        message = "The 3rd step is correct.  MoreGenericMessage here.";
+                        if (int == 3) {
+                            message = "The 1st step is correct.  MoreGenericMessage here.";
+                            newbool = true;
+                        }else{
+                        }
                     }else if (x == 4) {
-                        message = "The 4th step is correct.  MoreGenericMessage here.";
+                        if (int == 4) {
+                            message = "The 1st step is correct.  MoreGenericMessage here.";
+                            newbool = true;
+                        }else{
+                        }
                     }
-                    newbool = true;
                 }
-                $('.zone' + int).innerHTML = message;
+               $("#text").innerHTML = message;
             }
             
         }
        
     
     </script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
 
 </html>
