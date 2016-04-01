@@ -1,10 +1,42 @@
 <html>
+	
+	
+	
 	<head>
 
 	</head>
-
+	<style>
+		a{
+			color: blue;
+		}
+		
+		.invis {
+			visibility: hidden;
+		}
+		
+	</style>
 	<body>
-
+			Please insert the proper words.  Please! <br>
+			Write a name: <input type="text" name="Name" id="in0" ><br>
+			Write an adjective: <input type="text" name="Adjecive" id="in1" ><br>
+			Write a food: <input type="text" name="Food" id="in2" ><br>
+			Write a subject: <input type="text" name="Subject" id="in3" ><br>
+			Write a verb: <input type="text" name="Verb" id="in4" ><br>
+			Write a question about the subject: <input type="text" name="Question" id="in5" ><br>
+			Write another verb (different from your first verb): 
+			<input type="text" name="AVerb" id="in6" ><br>
+			<button type="button" onclick="madlibs()">Submit</button><br>
+		<div class="invis">
+		<br>
+		Your name is  <a id="out0">___</a>.
+		You are with your best friend, you nicknamed <a id="out1">___</a>.
+		You are eating <a id="out2">___</a>.
+		You have an exam on your worst class, <a id="out3">___</a>.
+		But you are <a id="out4">___</a>.
+		Your friend asks you a question, "<a id="out5">___</a>".
+		Frustrated that you got the answer wrong, you decided to <a id="out6">___</a>.
+		</div>
+		
 
 	</body>
 
@@ -12,5 +44,5 @@
 
 
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
-	<script src="Javascript.js"></script>
+	<script src="Javascript/Part2.js"></script>
 </html>
