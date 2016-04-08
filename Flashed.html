@@ -1,0 +1,47 @@
+<html>
+  <head>
+    <style>
+      body {
+        font-family: Helvetica;
+        text-align: center;
+      }
+      #card {
+        width: 500px;
+        padding: 120px 0;
+        margin: 50px auto;
+        border: 5px solid darkseagreen;
+        border-radius: 5px;
+        font-size: 18px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="card"></div>
+    <input type="text" id="answer"/>
+    <button onclick="answer();">Answer</button>
+  </body>  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <script>
+      var questions = [["This is an extremely hard question.","Ask for help."], ["Correct!","Exactly!"],
+                        ["Noun: person, person, or person", "G:iordan"]];
+      var count = 0;
+      
+      function nextCard() {
+        var question = questions[count][0];
+        $("#card").html(question);
+        count++;
+      }
+      function answer(){
+        var card = $("#card");
+        var answer = $("#answer");
+        if (answer.text() == answer.html()) {
+            alert("Correct!");
+            nextCard();
+        }
+      }
+      nextCard();
+      
+    
+    
+  </script>
+</html>
