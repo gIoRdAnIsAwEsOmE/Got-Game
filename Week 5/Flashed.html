@@ -19,19 +19,18 @@
     <div id="card"></div>
     <input type="text" id="answer"/>
     <button onclick="answer();">Regular Answer</button>
-    <a href="NumberFlashed.html"/>
   </body>  
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
   <script>
       var questions = [["This is an extremely hard question.","Ask for help."], ["Correct!","Exactly!"],
-                        ["Noun: person, person, or person", "G:iordan"], ["Questionare over","Wohoo!"]];
+                        ["Noun: person, person, or person", "G:iordan"], ["Questionare over","Wohoo!"]];//list
       var count = 0;
       
       function nextCard() {
         var question = questions[count][0];
         $("#card").html(question);
       }
-      function answer(){
+      function answer(){//$ = jquery
         var answer = $("#answer");
         if (answer.val() == questions[count][1]) {
             alert("Correct!");

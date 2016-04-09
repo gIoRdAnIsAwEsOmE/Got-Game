@@ -1,0 +1,32 @@
+<html>
+    <body>
+        <button onclick="button();">Click me</button>
+        <button onclick="change();">Change object</button>
+        
+    </body>
+    <script>
+        
+        function Person(name,age,mood) {
+            this.name = name;
+            this.age = age;
+            this.mood = mood;
+        }
+        var giordan = new Person("Giordan",100000, "tired");
+        function button() {
+            alert("hello " + giordan.name + ".  You are " + giordan.age + ".  You are extremely very " + giordan.mood);
+        }
+         function change() {
+            giordan.name = "Someone else";
+            giordan.age = "Some age";
+            giordan.mood = "Some mood";
+        }
+        
+        
+        
+        
+    </script> 
+
+
+
+
+</html>
