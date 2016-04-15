@@ -1,0 +1,40 @@
+<html>
+  <head>
+    <title>CraftyJS Intro</title>
+    <script src="https://rawgithub.com/craftyjs/Crafty/release/dist/crafty-min.js"></script>
+  </head>
+  <body>
+    <script>
+      function hit() {
+        alert("You win");
+        document.location.reload(true);
+      }
+      function start() {
+        Crafty.init();
+        var player = Crafty.e("Player, 2D, DOM, Color, Twoway, Gravity, Solid, Collision");
+        player.attr({x: 100, y: 100, w: 50, h: 50});
+        player.color("blue");
+        player.twoway();
+        player.gravity("Floor");
+        
+        var floorone = Crafty.e("Floor, 2D, DOM, Color");
+        floorone.attr({x: 100, y: 300, w: 80, h: 10});
+        floorone.color("green");
+        
+        var floortwo = Crafty.e("Floor, 2D, DOM, Color");
+        floortwo.attr({x: 400, y: 300, w: 80, h: 10});
+        floortwo.color("green");
+        
+        var floorthree = Crafty.e("Floor, 2D, DOM, Color");
+        floorthree.attr({x: 700, y: 300, w: 80, h: 10});
+        floorthree.color("green");
+        
+        var goal = Crafty.e("2D, DOM, Color, Solid, Collision");
+        goal.attr({x: 900, y: 200, w: 20, h: 20});
+        goal.color("red");
+        goal.onHit("Player", hit);
+      }
+      window.onload = start;      
+    </script>
+  </body>
+</html>
