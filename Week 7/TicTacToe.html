@@ -1,0 +1,76 @@
+<html>
+    <body>
+        I have decided to make a tic tac toe.
+        <br>
+        <button type="button" id="space1" onclick="XorO(1)"> </button>
+        <button type="button" id="space2" onclick="XorO(2)"> </button>
+        <button type="button" id="space3" onclick="XorO(3)"> </button>
+        <br>
+        <button type="button" id="space4" onclick="XorO(4)"> </button>
+        <button type="button" id="space5" onclick="XorO(5)"> </button>
+        <button type="button" id="space6" onclick="XorO(6)"> </button>
+        <br>
+        <button type="button" id="space7" onclick="XorO(7)"> </button>
+        <button type="button" id="space8" onclick="XorO(8)"> </button>
+        <button type="button" id="space9" onclick="XorO(9)"> </button>    
+    </body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script>
+        var move = 0;
+        var spacial;
+        function XorO(spacenum) {
+            var player;
+            var space = $("#space" + spacenum);
+            if (space.html() == " "){
+                if (move % 2 === 0){
+                    player = "X";
+                }else{
+                    player = "O";
+                }
+                move++;
+            }else {
+                alert("Choose a different move");
+            }
+            space.html(player);
+
+            var playermove = (spacenum - 1) % 3;
+            console.log(playermove);
+            spacial = [[$("#space1"), $("#space2"), $("#space3")],
+                       [$("#space4"), $("#space5"), $("#space6")],
+                       [$("#space7"), $("#space8"), $("#space9")]];
+                var rowcount = 0, colcount = 0, diacount = 0;
+                for(row = 0; row <= 2; row++){
+                    if(spacial[row][playermove].html() == player){
+                        rowcount++;
+                    }
+                }
+
+                for(col = 0; col <= 2; col++){
+                    if(spacial[playermove][col].html() == player){
+                        colcount++;
+                    }
+                }
+
+                for (diag = 0; diag <= 2; diag++){
+                    if(spacial[diag][diag].html() == player){
+                        diacount++;
+                    }
+                }
+
+                //decided to be lazy for opposite diagonals.  They are so annoying!
+                if(spacial[0][2].html() == spacial[1][1].html() && spacial[2][0] == spacial[1][1]){
+                    alert(player + " has won!");
+                }
+                if (rowcount == 3 || colcount == 3 || diacount == 3){
+                    alert(player + " has won!");
+                }
+
+                if (move == 9){
+                    alert("Restart match");
+                }
+            }
+
+    </script>
+    
+    
+</html>

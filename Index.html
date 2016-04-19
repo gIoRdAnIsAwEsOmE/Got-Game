@@ -1,0 +1,19 @@
+<html>
+    <body>
+        <table border="1" id="table">
+        </table>
+    </body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script>
+        var table = $('#table');
+        for(x = 1; x <= 30; x++){
+            table.append("<tr id=row" + x +"></tr>");
+            for(y = 1; y <= 30; y++){
+                var row = $('#row' + x);
+                row.append("<td>" + x*y +"</td>");
+                
+            }
+        }
+    </script>
+    
+</html>
